@@ -34,7 +34,7 @@ draw.line((left_x1, left_y1, left_x2, left_y2), fill=(0, 0, 0), width=3)
 draw.line((right_x1, right_y1, right_x2, right_y2), fill=(0, 0, 0), width=3)
 
 # Place the text
-draw.text((left_x1-15, left_y1-50), "f(x)", font=fnt, fill=(0, 0, 0, 255))
+draw.text((left_x1-15, left_y1-50), "A", font=fnt, fill=(0, 0, 0, 255))
 
 #Show image
 img.show()
