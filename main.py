@@ -22,7 +22,7 @@ right_x1,right_y1 = (x-left_x1, left_y1)
 right_x2,right_y2 = (x-left_x2, left_y2)
 
 # Get the font 
-fnt = ImageFont.truetype('./cambriai.ttc', 44)
+fnt = ImageFont.truetype('./font/cambriai.ttc', 44)
 
 # Draw a line in the img (x1, y1, x2, y2) form
 # x1 represent to start point in x 
