@@ -131,6 +131,46 @@ draw.line((label_line_x3, range_y*(4.25-CONST), label_line_x4, range_y*(4.25-CON
 #img_arrow = img_arrow.resize((round(img_arrow.size[0]*1), round(img_arrow.size[1]*0.75)))
 #img.paste(img_arrow, (90, int(domain_y*(2.17))), img_arrow)
 
+# 3 to 1
+#img_arrow = img_arrow.rotate(32.0, expand=True)
+#img_arrow = img_arrow.resize((round(img_arrow.size[0]*1), round(img_arrow.size[1]*0.75)))
+#img.paste(img_arrow, (90, int(domain_y*(1.42))), img_arrow)
+
+# 3 to 2
+#img_arrow = img_arrow.rotate(15.5, expand=True)
+#img_arrow = img_arrow.resize((round(img_arrow.size[0]*0.88), round(img_arrow.size[1]*0.75)))
+#img.paste(img_arrow, (95, int(domain_y*(2.27))), img_arrow)
+
+# 3 to 3
+#img_arrow = img_arrow.rotate(1.95, expand=True)
+#img_arrow = img_arrow.resize((round(img_arrow.size[0]*0.84), round(img_arrow.size[1]*0.75)))
+#img.paste(img_arrow, (100, int(domain_y*(3.03))), img_arrow)
+
+# 3 to 4
+#img_arrow = img_arrow.rotate(-13.5, expand=True)
+#img_arrow = img_arrow.resize((round(img_arrow.size[0]*0.87), round(img_arrow.size[1]*0.75)))
+#img.paste(img_arrow, (95, int(domain_y*(3.15))), img_arrow)
+
+# 4 to 1
+#img_arrow = img_arrow.rotate(56.3, expand=True)
+#img_arrow = img_arrow.resize((round(img_arrow.size[0]*1.5), round(img_arrow.size[1]*0.75)))
+#img.paste(img_arrow, (82, int(domain_y*(1.44))), img_arrow)
+
+# 4 to 2
+#img_arrow = img_arrow.rotate(34.5, expand=True)
+#img_arrow = img_arrow.resize((round(img_arrow.size[0]*1.03), round(img_arrow.size[1]*0.75)))
+#img.paste(img_arrow, (90, int(domain_y*(2.28))), img_arrow)
+
+# 4 to 3
+#img_arrow = img_arrow.rotate(19.8, expand=True)
+#img_arrow = img_arrow.resize((round(img_arrow.size[0]*0.89), round(img_arrow.size[1]*0.75)))
+#img.paste(img_arrow, (95, int(domain_y*(3.03))), img_arrow)
+
+# 4 to 4
+#img_arrow = img_arrow.rotate(4.1, expand=True)
+#img_arrow = img_arrow.resize((round(img_arrow.size[0]*0.84), round(img_arrow.size[1]*0.75)))
+#img.paste(img_arrow, (100, int(domain_y*(3.9))), img_arrow)
+
 
 # Show image
 img.show()
