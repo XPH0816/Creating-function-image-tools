@@ -84,12 +84,6 @@ draw.line((label_line_x3, range_y*(2.25+CONST/2), label_line_x4, range_y*(2.25+C
 draw.line((label_line_x3, range_y*(3.25-CONST/2), label_line_x4, range_y*(3.25-CONST/2)), fill=(0, 0, 0), width=2)
 draw.line((label_line_x3, range_y*(4.25-CONST), label_line_x4, range_y*(4.25-CONST)), fill=(0, 0, 0), width=2)
 
-# Draw Mapping line
-#draw.line((mapping_line_x1, mapping_line_y1*(1.25), mapping_line_x2, mapping_line_y2*(1.25+CONST)), fill=(0, 0, 0), width=4)
-#draw.line((mapping_line_x1, mapping_line_y1*(2.25), mapping_line_x2, mapping_line_y2*(2.25+CONST/2)), fill=(0, 0, 0), width=4)
-#draw.line((mapping_line_x1, mapping_line_y1*(3.25), mapping_line_x2, mapping_line_y2*(3.25-CONST/2)), fill=(0, 0, 0), width=4)
-#draw.line((mapping_line_x1, mapping_line_y1*(4.25), mapping_line_x2, mapping_line_y2*(4.25-CONST)), fill=(0, 0, 0), width=4)
-
 # Draw the arrow to the line
 # 1 to 1
 #img_arrow = img_arrow.rotate(-4.5, expand=True)
