@@ -1,4 +1,8 @@
 # Import required modules from Pillow package
+import sys
+from PyQt5 import QtGui
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel
+from PyQt5.QtGui import QIcon, QImage, QPixmap
 from PIL import Image, ImageDraw, ImageFont
 
 # Creating an image with 600px * 600px and a white background
@@ -167,7 +171,40 @@ draw.line((label_line_x3, range_y*(4.25-CONST), label_line_x4, range_y*(4.25-CON
 
 
 # Show image
-img.show()
+#img.show()
 
 # Save image
 #img.save("./image/test.png")
+
+
+class App(QWidget):
+
+    def __init__(self, img):
+        self.img = img
+        super().__init__()
+        self.title = 'PyQt5 image - pythonspot.com'
+        self.left = 100
+        self.top = 100
+        self.width = 640
+        self.height = 480
+        self.initUI()
+
+    def initUI(self):
+        self.setWindowTitle(self.title)
+        self.setGeometry(self.left, self.top, self.width, self.height)
+
+        # Create widget
+        label = QLabel(self)
+        self.data = self.img.tobytes("raw", "RGBA")
+        self.img = QtGui.QImage(self.data, self.img.size[0], self.img.size[1], QtGui.QImage.Format_ARGB32)
+        pixmap = QPixmap(self.img)
+        label.setPixmap(pixmap)
+        self.resize(pixmap.width(), pixmap.height())
+
+        self.show()
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = App(img)
+    sys.exit(app.exec_())
