@@ -182,7 +182,7 @@ class App(QWidget):
     def __init__(self, img):
         self.img = img
         super().__init__()
-        self.title = 'PyQt5 image - pythonspot.com'
+        self.title = 'PyQt5 image'
         self.left = 100
         self.top = 100
         self.width = 640
@@ -195,8 +195,9 @@ class App(QWidget):
 
         # Create widget
         label = QLabel(self)
-        self.data = self.img.tobytes("raw", "RGBA")
-        self.img = QtGui.QImage(self.data, self.img.size[0], self.img.size[1], QtGui.QImage.Format_ARGB32)
+        self.preview = self.img.resize((round(self.img.size[0]*0.5), round(self.img.size[1]*0.5)))
+        self.data = self.preview.tobytes("raw", "RGBA")
+        self.img = QtGui.QImage(self.data, self.preview.size[0], self.preview.size[1], QtGui.QImage.Format_ARGB32)
         pixmap = QPixmap(self.img)
         label.setPixmap(pixmap)
         self.resize(pixmap.width(), pixmap.height())
