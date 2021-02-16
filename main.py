@@ -35,10 +35,10 @@ function_x = (x/2)
 function_y = (left_y1-60)
 
 domain_x = left_x1-40
-domain_y = (left_y1+left_y2)/6
+domain_y = (left_y1+left_y2)/4
 
 range_x = right_x1+20
-range_y = (right_y1+right_y2)/6
+range_y = (right_y1+right_y2)/4
 
 mapping_line_x1, mapping_line_y1 = (domain_x+40, domain_y)
 mapping_line_x2, mapping_line_y2 = (range_x-20, range_y)
@@ -67,42 +67,42 @@ draw.text((function_x, function_y), "f", font=fnt_i, fill=(0, 0, 0, 255))
 # Creating Domain
 draw.text((domain_x, domain_y*(1)), "1", font=fnt, fill=(0, 0, 0, 255))
 draw.text((domain_x, domain_y*(2)), "b", font=fnt_i, fill=(0, 0, 0, 255))
-draw.text((domain_x, domain_y*(3)), "3", font=fnt, fill=(0, 0, 0, 255))
-draw.text((domain_x, domain_y*(4)), "4", font=fnt, fill=(0, 0, 0, 255))
+#draw.text((domain_x, domain_y*(3)), "3", font=fnt, fill=(0, 0, 0, 255))
+#draw.text((domain_x, domain_y*(4)), "4", font=fnt, fill=(0, 0, 0, 255))
 
 # Draw Domain Label Line 
 draw.line((label_line_x1, domain_y*(1.25), label_line_x2, domain_y*(1.25)), fill=(0, 0, 0), width=2)
 draw.line((label_line_x1, domain_y*(2.25), label_line_x2, domain_y*(2.25)), fill=(0, 0, 0), width=2)
-draw.line((label_line_x1, domain_y*(3.25), label_line_x2, domain_y*(3.25)), fill=(0, 0, 0), width=2)
-draw.line((label_line_x1, domain_y*(4.25), label_line_x2, domain_y*(4.25)), fill=(0, 0, 0), width=2)
+#draw.line((label_line_x1, domain_y*(3.25), label_line_x2, domain_y*(3.25)), fill=(0, 0, 0), width=2)
+#draw.line((label_line_x1, domain_y*(4.25), label_line_x2, domain_y*(4.25)), fill=(0, 0, 0), width=2)
 
 # Creating Range
 draw.text((range_x, range_y*(1+CONST)), "a", font=fnt_i, fill=(0, 0, 0, 255))
 draw.text((range_x, range_y*(2+CONST/2)), "2", font=fnt, fill=(0, 0, 0, 255))
-draw.text((range_x, range_y*(3-CONST/2)), "c", font=fnt_i, fill=(0, 0, 0, 255))
-draw.text((range_x, range_y*(4-CONST)), "d", font=fnt_i, fill=(0, 0, 0, 255))
+#draw.text((range_x, range_y*(3-CONST/2)), "c", font=fnt_i, fill=(0, 0, 0, 255))
+#draw.text((range_x, range_y*(4-CONST)), "d", font=fnt_i, fill=(0, 0, 0, 255))
 
 # Draw Range Label Line 
 draw.line((label_line_x3, range_y*(1.25+CONST), label_line_x4, range_y*(1.25+CONST)), fill=(0, 0, 0), width=2)
 draw.line((label_line_x3, range_y*(2.25+CONST/2), label_line_x4, range_y*(2.25+CONST/2)), fill=(0, 0, 0), width=2)
-draw.line((label_line_x3, range_y*(3.25-CONST/2), label_line_x4, range_y*(3.25-CONST/2)), fill=(0, 0, 0), width=2)
-draw.line((label_line_x3, range_y*(4.25-CONST), label_line_x4, range_y*(4.25-CONST)), fill=(0, 0, 0), width=2)
+#draw.line((label_line_x3, range_y*(3.25-CONST/2), label_line_x4, range_y*(3.25-CONST/2)), fill=(0, 0, 0), width=2)
+#draw.line((label_line_x3, range_y*(4.25-CONST), label_line_x4, range_y*(4.25-CONST)), fill=(0, 0, 0), width=2)
 
 # Draw the arrow to the line
 # 1 to 1
-#img_arrow = img_arrow.rotate(-4.5, expand=True)
+#img_arrow = img_arrow.rotate(-5.2, expand=True)
 #img_arrow = img_arrow.resize((round(img_arrow.size[0]*0.85), round(img_arrow.size[1]*0.75)))
-#img.paste(img_arrow, (90, int(domain_y*(1.15))), img_arrow)
+#img.paste(img_arrow, (95, int(domain_y*(1.17))), img_arrow)
 
 # 1 to 2
-#img_arrow = img_arrow.rotate(-20, expand=True)
-#img_arrow = img_arrow.resize((round(img_arrow.size[0]*0.9), round(img_arrow.size[1]*0.75)))
-#img.paste(img_arrow, (90, int(domain_y*(1.15))), img_arrow)
+#img_arrow = img_arrow.rotate(-24, expand=True)
+#img_arrow = img_arrow.resize((round(img_arrow.size[0]*0.92), round(img_arrow.size[1]*0.75)))
+#img.paste(img_arrow, (95, int(domain_y*(1.17))), img_arrow)
 
 # 1 to 3
-#img_arrow = img_arrow.rotate(-35.5, expand=True)
-#img_arrow = img_arrow.resize((round(img_arrow.size[0]*1.05), round(img_arrow.size[1]*0.75)))
-#img.paste(img_arrow, (90, int(domain_y*(1.15))), img_arrow)
+#img_arrow = img_arrow.rotate(-42.5, expand=True)
+#img_arrow = img_arrow.resize((round(img_arrow.size[0]*1.13), round(img_arrow.size[1]*0.75)))
+#img.paste(img_arrow, (90, int(domain_y*(1.2))), img_arrow)
 
 # 1 to 4
 #img_arrow = img_arrow.rotate(-57, expand=True)
@@ -110,19 +110,19 @@ draw.line((label_line_x3, range_y*(4.25-CONST), label_line_x4, range_y*(4.25-CON
 #img.paste(img_arrow, (80, int(domain_y*(1.2))), img_arrow)
 
 # 2 to 1
-#img_arrow = img_arrow.rotate(13.2, expand=True)
+#img_arrow = img_arrow.rotate(15.8, expand=True)
 #img_arrow = img_arrow.resize((round(img_arrow.size[0]*0.88), round(img_arrow.size[1]*0.75)))
-#img.paste(img_arrow, (95, int(domain_y*(1.39))), img_arrow)
+#img.paste(img_arrow, (95, int(domain_y*(1.41))), img_arrow)
 
 # 2 to 2
-#img_arrow = img_arrow.rotate(-2.2, expand=True)
-#img_arrow = img_arrow.resize((round(img_arrow.size[0]*0.88), round(img_arrow.size[1]*0.75)))
-#img.paste(img_arrow, (95, int(domain_y*(2.15))), img_arrow)
+#img_arrow = img_arrow.rotate(-2.5, expand=True)
+#img_arrow = img_arrow.resize((round(img_arrow.size[0]*0.85), round(img_arrow.size[1]*0.75)))
+#img.paste(img_arrow, (97, int(domain_y*(2.17))), img_arrow)
 
 # 2 to 3
-#img_arrow = img_arrow.rotate(-15.4, expand=True)
-#img_arrow = img_arrow.resize((round(img_arrow.size[0]*0.88), round(img_arrow.size[1]*0.75)))
-#img.paste(img_arrow, (95, int(domain_y*(2.15))), img_arrow)
+#img_arrow = img_arrow.rotate(-18.5, expand=True)
+#img_arrow = img_arrow.resize((round(img_arrow.size[0]*0.89), round(img_arrow.size[1]*0.75)))
+#img.paste(img_arrow, (95, int(domain_y*(2.17))), img_arrow)
 
 # 2 to 4
 #img_arrow = img_arrow.rotate(-32.2, expand=True)
@@ -130,19 +130,19 @@ draw.line((label_line_x3, range_y*(4.25-CONST), label_line_x4, range_y*(4.25-CON
 #img.paste(img_arrow, (90, int(domain_y*(2.17))), img_arrow)
 
 # 3 to 1
-#img_arrow = img_arrow.rotate(32.0, expand=True)
-#img_arrow = img_arrow.resize((round(img_arrow.size[0]*1), round(img_arrow.size[1]*0.75)))
+#img_arrow = img_arrow.rotate(39.5, expand=True)
+#img_arrow = img_arrow.resize((round(img_arrow.size[0]*1.09), round(img_arrow.size[1]*0.75)))
 #img.paste(img_arrow, (90, int(domain_y*(1.42))), img_arrow)
 
 # 3 to 2
-#img_arrow = img_arrow.rotate(15.5, expand=True)
-#img_arrow = img_arrow.resize((round(img_arrow.size[0]*0.88), round(img_arrow.size[1]*0.75)))
-#img.paste(img_arrow, (95, int(domain_y*(2.27))), img_arrow)
+#img_arrow = img_arrow.rotate(18.5, expand=True)
+#img_arrow = img_arrow.resize((round(img_arrow.size[0]*0.89), round(img_arrow.size[1]*0.75)))
+#img.paste(img_arrow, (95, int(domain_y*(2.29))), img_arrow)
 
 # 3 to 3
-#img_arrow = img_arrow.rotate(1.95, expand=True)
+#img_arrow = img_arrow.rotate(2.5, expand=True)
 #img_arrow = img_arrow.resize((round(img_arrow.size[0]*0.84), round(img_arrow.size[1]*0.75)))
-#img.paste(img_arrow, (100, int(domain_y*(3.03))), img_arrow)
+#img.paste(img_arrow, (100, int(domain_y*(3.04))), img_arrow)
 
 # 3 to 4
 #img_arrow = img_arrow.rotate(-13.5, expand=True)
@@ -171,12 +171,12 @@ draw.line((label_line_x3, range_y*(4.25-CONST), label_line_x4, range_y*(4.25-CON
 
 
 # Show image
-#img.show()
+img.show()
 
 # Save image
 #img.save("./image/test.png")
 
-
+"""
 class App(QWidget):
 
     def __init__(self, img):
@@ -209,3 +209,4 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = App(img)
     sys.exit(app.exec_())
+"""

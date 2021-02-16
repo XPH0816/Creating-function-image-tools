@@ -1,3 +1,6 @@
+from os import link
+from PreviewFrame import Preview_Window
+from main_OOP import Picture
 import sys
 
 from PyQt5.QtWidgets import QApplication, QComboBox, QFormLayout, QGridLayout, QGroupBox, QHBoxLayout, QLineEdit, QMainWindow, QPushButton, QRadioButton, QStackedLayout, QVBoxLayout, QWidget
@@ -9,6 +12,8 @@ class Window(QMainWindow):
     def __init__(self):
         """View initializer."""
         super().__init__()
+        self.number_point = 1
+        self.function_type = 0
         
         # Set some main window's properties
         self.setWindowTitle('Function Image')
@@ -237,6 +242,11 @@ class Window(QMainWindow):
         self.number_3.clicked.connect(lambda: self.switchPage(self.number_3))
         self.number_4.clicked.connect(lambda: self.switchPage(self.number_4))
         
+        self.preview_button.clicked.connect(self.CreateImage)
+        
+        self.type_radiobutton_1.clicked.connect(self.setFunctionType)
+        self.type_radiobutton_2.clicked.connect(self.setFunctionType)
+        
         #Set the Status Bar
         status = QStatusBar()
         status.showMessage("Welcome to the Creating function image tool")
@@ -244,7 +254,43 @@ class Window(QMainWindow):
         
     def switchPage(self, b):
         b = int(b.text())
+        self.number_point = b
         self.stackedLayout.setCurrentIndex(b-1)
+        
+    def setFunctionType(self):
+        if self.type_radiobutton_1.isChecked() :
+            self.function_type = 0
+        elif self.type_radiobutton_2.isChecked() :
+            self.function_type = 1
+        pass
+    
+    def CreateImage(self):
+        # Initialize the value
+        if self.number_point == 1:
+            self.point_domain = [self.firstpointvalue.text()]
+            self.point_range = [self.firstendpointvalue.text()]
+            self.link_order = [1,1]
+        elif self.number_point == 2 :
+            self.point_domain = [self.firstpointvalue2.text(), self.secondpointvalue2.text()]
+            self.point_range = [self.firstendpointvalue2.text(), self.secondendpointvalue2.text()]
+            self.link_order = [self.combolink2_1.currentIndex()+1, self.combolink2_2.currentIndex()+1]
+        elif self.number_point == 3:
+            self.point_domain = [self.firstpointvalue3.text(), self.secondpointvalue3.text(), self.thirdpointvalue3.text()]
+            self.point_range = [self.firstendpointvalue3.text(), self.secondendpointvalue3.text(), self.thirdendpointvalue3.text()]
+            self.link_order = [self.combolink3_1.currentIndex()+1, self.combolink3_2.currentIndex()+1, self.combolink3_3.currentIndex()+1]
+        elif self.number_point == 4 :
+            self.point_domain = [self.firstpointvalue4.text(), self.secondpointvalue4.text(), self.thirdpointvalue4.text(), self.fourthpointvalue4.text()]
+            self.point_range = [self.firstendpointvalue4.text(), self.secondendpointvalue4.text(), self.thirdendpointvalue4.text(), self.fourthendpointvalue4.text()]
+            self.link_order = [self.combolink4_1.currentIndex()+1, self.combolink4_2.currentIndex()+1, self.combolink4_3.currentIndex()+1, self.combolink4_4.currentIndex()+1]
+        
+        
+        #Create the Image
+        img = Picture(self.function_type, self.function_name.text(), self.number_point, self.point_domain, self.point_range, self.link_order)
+                
+        # Create the Preview Frame
+        Frame = Preview_Window(img.img)
+        Frame.show()
+        
 
 
 if __name__ == '__main__':

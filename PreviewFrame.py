@@ -4,12 +4,12 @@ from PyQt5 import QtGui
 from PyQt5.QtGui import QClipboard, QIcon, QImage, QPixmap
 from PyQt5.QtCore import Qt
 
-from PyQt5.QtWidgets import QApplication, QGridLayout, QHBoxLayout, QLabel, QMainWindow, QPushButton, QWidget
+from PyQt5.QtWidgets import QApplication, QGridLayout, QHBoxLayout, QLabel, QPushButton, QWidget
 
 # Create a subclass of QMainWindow to setup the calculator's GUI
-class Window(QMainWindow):
+class Preview_Window(QWidget):
     """GUI View"""
-    def __init__(self):
+    def __init__(self, img):
         """View initializer."""
         super().__init__()
         
@@ -17,24 +17,22 @@ class Window(QMainWindow):
         self.setWindowTitle('Function Image')
         self.setFixedSize(600, 600)
         
-        # Set the central widget
-        self._centralWidget = QWidget(self)
-        self.setCentralWidget(self._centralWidget)
-        
         #Set the Grid Layout
         self.layout = QGridLayout()
         
         #Set the First Part Outer Layout
         self.sublayout_1 = QHBoxLayout()
+        self.sublayout_1.setContentsMargins(40, 30, 0, 0)
         
         #Create the Photopage
         self.photopage = QWidget()
-        #self.photo = QLabel(self.photopage)
-        #self.img = Image.new('RGBA', (600, 600), (255, 255, 255, 255))
-        #self.data = self.img.tobytes("raw", "RGBA")
-        #self.img = QtGui.QImage(self.data, self.img.size[0], self.img.size[1], QtGui.QImage.Format_ARGB32)
-        #self.pixmap = QPixmap(self.img)
-        #self.photo.setPixmap(self.pixmap)
+        self.photo = QLabel(self.photopage)
+        self.img = img
+        self.preview = self.img.resize((round(self.img.size[0]*0.8), round(self.img.size[1]*0.8)))
+        self.data = self.preview.tobytes("raw", "RGBA")
+        self.img = QtGui.QImage(self.data, self.preview.size[0], self.preview.size[1], QtGui.QImage.Format_ARGB32)
+        self.pixmap = QPixmap(self.img)
+        self.photo.setPixmap(self.pixmap)
         
         #Place the Photopage
         self.sublayout_1.addWidget(self.photopage)
@@ -62,10 +60,10 @@ class Window(QMainWindow):
         self.layout.setRowStretch(1, 1)
         
         #Place the Grid layout to Central Widget
-        self._centralWidget.setLayout(self.layout)
+        self.setLayout(self.layout)
         
         #Connect all Function
-        #self.copybutton.clicked.connect(lambda:self.copy(self.img))
+        self.copybutton.clicked.connect(lambda:self.copy(self.img))
         self.cancelbutton.clicked.connect(lambda:self.close())
         
     def copy(self, picture):
@@ -74,6 +72,6 @@ class Window(QMainWindow):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    win = Window()
+    win = Preview_Window()
     win.show()
     sys.exit(app.exec_())
