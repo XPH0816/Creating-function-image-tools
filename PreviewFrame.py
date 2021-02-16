@@ -1,8 +1,6 @@
 import sys
-from PIL import Image
 from PyQt5 import QtGui
 from PyQt5.QtGui import QClipboard, QIcon, QImage, QPixmap
-from PyQt5.QtCore import Qt
 
 from PyQt5.QtWidgets import QApplication, QGridLayout, QHBoxLayout, QLabel, QPushButton, QWidget
 
@@ -64,10 +62,14 @@ class Preview_Window(QWidget):
         
         #Connect all Function
         self.copybutton.clicked.connect(lambda:self.copy(self.img))
+        self.savebutton.clicked.connect(lambda:self.save(self.img))
         self.cancelbutton.clicked.connect(lambda:self.close())
         
     def copy(self, picture):
         QApplication.clipboard().setImage(picture)
+    
+    def save(self, picture):
+        picture.save("./result.png","PNG")
 
 
 if __name__ == '__main__':
