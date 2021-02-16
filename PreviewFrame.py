@@ -15,6 +15,7 @@ class Preview_Window(QWidget):
         
         # Set some main window's properties
         self.setWindowTitle('Function Image')
+        self.setWindowIcon(QtGui.QIcon('Draw.ico'))
         self.setFixedSize(600, 600)
         
         #Set the Grid Layout

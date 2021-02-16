@@ -1,10 +1,10 @@
-from os import link
 from PreviewFrame import Preview_Window
 from main import Picture
 import sys
 
-from PyQt5.QtWidgets import QApplication, QComboBox, QFormLayout, QGridLayout, QGroupBox, QHBoxLayout, QLineEdit, QMainWindow, QPushButton, QRadioButton, QStackedLayout, QVBoxLayout, QWidget
-from PyQt5.QtWidgets import QStatusBar
+from PyQt5 import QtGui
+from PyQt5.QtWidgets import QApplication,  QFormLayout, QGridLayout, QGroupBox, QHBoxLayout, QMainWindow, QStackedLayout, QVBoxLayout 
+from PyQt5.QtWidgets import QLineEdit, QComboBox, QPushButton, QRadioButton, QWidget, QStatusBar
 
 # Create a subclass of QMainWindow to setup the calculator's GUI
 class Window(QMainWindow):
@@ -17,6 +17,7 @@ class Window(QMainWindow):
         
         # Set some main window's properties
         self.setWindowTitle('Function Image')
+        self.setWindowIcon(QtGui.QIcon('Draw.ico'))
         self.setFixedSize(900, 600)
         
         # Set the central widget
