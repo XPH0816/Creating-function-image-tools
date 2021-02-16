@@ -1,6 +1,6 @@
 from os import link
 from PreviewFrame import Preview_Window
-from main_OOP import Picture
+from main import Picture
 import sys
 
 from PyQt5.QtWidgets import QApplication, QComboBox, QFormLayout, QGridLayout, QGroupBox, QHBoxLayout, QLineEdit, QMainWindow, QPushButton, QRadioButton, QStackedLayout, QVBoxLayout, QWidget
@@ -269,7 +269,7 @@ class Window(QMainWindow):
         if self.number_point == 1:
             self.point_domain = [self.firstpointvalue.text()]
             self.point_range = [self.firstendpointvalue.text()]
-            self.link_order = [1,1]
+            self.link_order = [1]
         elif self.number_point == 2 :
             self.point_domain = [self.firstpointvalue2.text(), self.secondpointvalue2.text()]
             self.point_range = [self.firstendpointvalue2.text(), self.secondendpointvalue2.text()]

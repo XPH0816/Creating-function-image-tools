@@ -4,10 +4,10 @@
     "1": {
         "1": {
             "1": {
-                "angle": -4.5,
+                "angle": -8.7,
                 "image-size": 0.85,
-                "position-x": 90,
-                "position-y": 1.15
+                "position-x": 98,
+                "position-y": 1.2
             }
         }
     },
@@ -15,30 +15,30 @@
     "2": {
         "1": {
             "1": {
-                "angle": -4.5,
+                "angle": -6.4,
                 "image-size": 0.85,
-                "position-x": 90,
-                "position-y": 1.15
+                "position-x": 97,
+                "position-y": 1.19
             },
             "2": {
-                "angle": -20,
-                "image-size": 0.9,
-                "position-x": 90,
-                "position-y": 1.15
+                "angle": -30,
+                "image-size": 0.97,
+                "position-x": 93,
+                "position-y": 1.2
             }
         },
         "2": {
             "1": {
-                "angle": 13.2,
-                "image-size": 0.88,
+                "angle": 19.9,
+                "image-size": 0.9,
                 "position-x": 95,
-                "position-y": 1.39
+                "position-y": 1.43
             },
             "2": {
-                "angle": -2.2,
-                "image-size": 0.85,
-                "position-x": 95,
-                "position-y": 2.15
+                "angle": -3.2,
+                "image-size": 0.84,
+                "position-x": 98,
+                "position-y": 2.18
             }
         }
     },
