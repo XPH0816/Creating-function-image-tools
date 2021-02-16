@@ -6,7 +6,6 @@ from PyQt5 import QtGui
 from PyQt5.QtWidgets import QApplication,  QFormLayout, QGridLayout, QGroupBox, QHBoxLayout, QMainWindow, QStackedLayout, QVBoxLayout 
 from PyQt5.QtWidgets import QLineEdit, QComboBox, QPushButton, QRadioButton, QWidget, QStatusBar
 
-# Create a subclass of QMainWindow to setup the calculator's GUI
 class Window(QMainWindow):
     """GUI View"""
     def __init__(self):

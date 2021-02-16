@@ -6,7 +6,6 @@ from PyQt5.QtCore import Qt
 
 from PyQt5.QtWidgets import QApplication, QGridLayout, QHBoxLayout, QLabel, QPushButton, QWidget
 
-# Create a subclass of QMainWindow to setup the calculator's GUI
 class Preview_Window(QWidget):
     """GUI View"""
     def __init__(self, img):
