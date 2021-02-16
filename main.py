@@ -106,7 +106,7 @@ class Picture:
                     self.draw.text((range_x+20*(j-1), range_y*(i+CONST/i)), value, font=fnt_i, fill=(0, 0, 0, 255))
                     self.draw.line((label_line_x3, range_y*(i+0.25+CONST/i), label_line_x4, range_y*(i+0.25+CONST/i)), fill=(0, 0, 0), width=2)
                 elif i > 2:
-                    self.draw.text((range_x+20*(j-1), range_y*(i-CONST/(4-i))), value, font=fnt_i, fill=(0, 0, 0, 255))
+                    self.draw.text((range_x+20*(j-1), range_y*(i-CONST/(5-i))), value, font=fnt_i, fill=(0, 0, 0, 255))
                     self.draw.line((label_line_x3, range_y*(i+0.25-CONST/(5-i)), label_line_x4, range_y*(i+0.25-CONST/(5-i))), fill=(0, 0, 0), width=2)
         
         
