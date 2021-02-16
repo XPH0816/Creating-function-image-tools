@@ -2,7 +2,7 @@
 
 Developer : XPH0904
 
-# Project
+## Project
 This Project is free to use and edit for library
 This Project contains the functions below :
 
@@ -12,6 +12,12 @@ This Project contains the functions below :
 | PreviewFrame | GUI Frame for Preview the Picture  |
 | main | Contain All the backend function for creating the image |
 
-# Project Idea
+## Project Idea
 This project is inspired by my mom
 
+### Windows
+
+For Windows, for simplicity, a prebuilt archive with all the dependencies
+ - [`Creating-function-image-tools-windows.7z`][direct-win64]
+ 
+ [direct-win64]:https://github.com/XPH0904/Creating-function-image-tools/releases/download/v1.0/Creating-function-image-tools-windows.7z
