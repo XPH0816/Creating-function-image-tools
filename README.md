@@ -6,11 +6,13 @@ Developer : XPH0904
 This Project is free to use and edit for everyone  
 This Project contains the functions below :
 
-| Functions | Description  |
-| ------------- | ------------- |
-| MainFrame | GUI Frame for configuration  |
-| PreviewFrame | GUI Frame for Preview the Picture  |
-| main | Contain All the backend function for creating the image |
+### Project Content
+
+| Functions | Description  | Package Used |
+| ------------- | ------------- | ------------- |
+| MainFrame | GUI Frame for configuration  | PyQt5 |
+| PreviewFrame | GUI Frame for Preview the Picture  | PyQt5 |
+| main | Contain All the backend function for creating the image | Pillow |
 
 ## Project Idea
 This project is inspired by my mom
