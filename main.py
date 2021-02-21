@@ -72,6 +72,8 @@ class Picture:
             self.draw.text((left_text_x, left_text_y), "x", font=fnt_i, fill=(0, 0, 0, 255))
             self.draw.text((right_text_x, right_text_y), "%s(x)" % function_name, font=fnt_i, fill=(0, 0, 0, 255))
             self.draw.text((function_x, function_y), "%s" % function_name, font=fnt_i, fill=(0, 0, 0, 255))
+        if function_type == 2 :
+            self.draw.text((function_x, function_y), function_name, font=fnt_i, fill=(0, 0, 0, 255))
         
         
         # Creating Domain and Label Line

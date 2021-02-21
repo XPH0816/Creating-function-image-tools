@@ -45,10 +45,12 @@ class Window(QMainWindow):
         self.type_radiobutton_1 = QRadioButton("A/B")
         self.type_radiobutton_1.setChecked(True)
         self.type_radiobutton_2 = QRadioButton("x - f(x)")
+        self.type_radiobutton_3 = QRadioButton("None")
         
         #Place the Radiobutton
         self.leftlayout_1.addWidget(self.type_radiobutton_1)
         self.leftlayout_1.addWidget(self.type_radiobutton_2)
+        self.leftlayout_1.addWidget(self.type_radiobutton_3)
         
         #Set the Second part of Inner Layout
         self.leftlayout_2 = QFormLayout()
@@ -246,6 +248,7 @@ class Window(QMainWindow):
         
         self.type_radiobutton_1.clicked.connect(self.setFunctionType)
         self.type_radiobutton_2.clicked.connect(self.setFunctionType)
+        self.type_radiobutton_3.clicked.connect(self.setFunctionType)
         
         #Set the Status Bar
         status = QStatusBar()
@@ -262,6 +265,8 @@ class Window(QMainWindow):
             self.function_type = 0
         elif self.type_radiobutton_2.isChecked() :
             self.function_type = 1
+        elif self.type_radiobutton_3.isChecked() :
+            self.function_type = 2
         pass
     
     def CreateImage(self):
