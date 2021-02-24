@@ -3,10 +3,55 @@ import json
 
 class Picture:
     
-    def __init__(self, function_type: int, function_name: str, number_point: int, point_domain: list, point_range: list, link_order: list):
+    def __init__(self):
         
         # Creating an image with 600px * 600px and a white background
         self.img = Image.new('RGBA', (600, 600), (255, 255, 255, 255))
+        
+    def DrawPoint(self, num: int, link_order: list):
+        # Get the img size
+        x, y = self.img.size
+
+        """ Set the position value """
+        # Start point and the end point for the left line
+        left_start_point = (50, 150)
+        left_end_point = (200, 450)
+
+        # Start point and the end point for the right line
+        right_start_point = (x-left_end_point[0], left_start_point[1])
+        right_end_point = (x-left_start_point[0], left_end_point[1])
+
+        # First Point Left Point position
+        left_first_start_x, left_first_start_y = (left_start_point[0]+70, left_start_point[1]+45)
+        left_first_end_x, left_first_end_y = (left_start_point[0]+80, left_start_point[1]+55)
+
+        # First Point Right Point position
+        right_first_start_x, right_first_start_y = (right_start_point[0]+70, right_start_point[1]+45)
+        right_first_end_x, right_first_end_y = (right_start_point[0]+80, right_start_point[1]+55)
+
+        # Creating Draw Tools for the picture
+        draw = ImageDraw.Draw(self.img)
+
+        draw.ellipse((left_start_point, left_end_point), fill=(255, 255, 255), outline=(0, 0, 0), width=3)
+        draw.ellipse((right_start_point, right_end_point), fill=(255, 255, 255), outline=(0, 0, 0), width=3)
+        
+        #Draw the point
+        for x in range(num):
+            CONST = 245 - 45 * num
+            draw.ellipse((left_first_start_x, left_first_start_y+(CONST*x), left_first_end_x, left_first_end_y+(CONST*x)), fill=(0, 0, 0))
+            draw.ellipse((right_first_start_x, right_first_start_y+(CONST*x), right_first_end_x, right_first_end_y+(CONST*x)), fill=(0, 0, 0))
+        
+        #Draw the line
+        for x in link_order:
+            
+            # link_order in [[1,2],[3,4]] form
+            # x in [1,2] form
+            first, last = x
+            
+            self.DrawPointLine(num, first, last)
+        
+        
+    def DrawFunction(self, function_type: int, function_name: str, number_point: int, point_domain: list, point_range: list, link_order: list):
         
         """Initialize the variable"""
 
@@ -123,7 +168,27 @@ class Picture:
             return True
         except ValueError:
             return False
-    
+        
+    # Draw the point line
+    def DrawPointLine(self, number_point: int, start: int, end: int):
+        # Read the setting file
+        with open("./data.json") as f:
+            data = json.load(f)
+
+        # Set the value
+        size = data["image-size"]
+        data = data["point"]["%s" % number_point]
+        data = data["%s" % start]["%s" % end]
+        
+        #Create the Mapping Line
+        img_arrow = Image.open(
+            'image\line with middle arrow.png').convert('RGBA')
+        img_arrow = img_arrow.rotate(data["angle"], expand=True)
+        img_arrow = img_arrow.resize(
+            (round(img_arrow.size[0]*data["image-size"]), round(img_arrow.size[1]*size)))
+        self.img.paste(
+            img_arrow, (data["position-x"], data["position-y"]), img_arrow)
+
     # Draw the line
     def DrawLine(self, number_point: int, start: int, end: int):
         # Read the setting file
@@ -147,6 +212,8 @@ class Picture:
 
 if __name__ == '__main__':
     # Case 4 point
-    img = Picture(0, "f", 4, ["1","2","3","4"], ["1","2","3","4"], [1,2,3,4])
+    img = Picture()
+    #img.DrawFunction(0, "f", 4, ["1","2","3","4"], ["1","2","3","4"], [1,2,3,4])
+    img.DrawPoint(4, [[1,2],[2,3],[1,3],[2,1]])
     img = img.img
     img.show()

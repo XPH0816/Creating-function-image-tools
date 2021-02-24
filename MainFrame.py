@@ -290,7 +290,8 @@ class Window(QMainWindow):
         
         
         #Create the Image
-        img = Picture(self.function_type, self.function_name.text(), self.number_point, self.point_domain, self.point_range, self.link_order)
+        img = Picture()
+        img.DrawFunction(self.function_type, self.function_name.text(), self.number_point, self.point_domain, self.point_range, self.link_order)
                 
         # Create the Preview Frame
         Frame = Preview_Window(img.img)
