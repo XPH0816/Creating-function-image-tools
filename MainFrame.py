@@ -11,8 +11,21 @@ class Window(QMainWindow):
     def __init__(self):
         """View initializer."""
         super().__init__()
+        
         self.number_point = 1
         self.function_type = 0
+        self.firstpointvalue = ""
+        self.secondpointvalue = "" 
+        self.thirdpointvalue = "" 
+        self.fourthpointvalue = ""
+        self.firstendpointvalue = ""
+        self.secondendpointvalue = "" 
+        self.thirdendpointvalue = "" 
+        self.fourthendpointvalue = ""
+        self.first_link = 1
+        self.second_link = 2
+        self.third_link = 3
+        self.fourth_link = 4
         
         # Set some main window's properties
         self.setWindowTitle('Function Image')
@@ -100,127 +113,11 @@ class Window(QMainWindow):
         #Create the stacked Layout
         self.stackedLayout = QStackedLayout()
         
-        #Create the First Page
-        self.page1 = QWidget()
-        self.page1.setContentsMargins(0, 10, 0, 0)
-        self.page1Layout = QFormLayout()
-        self.page1Layout.setVerticalSpacing(10)
-        self.firstpointvalue = QLineEdit()
-        self.firstendpointvalue = QLineEdit()
-        self.page1Layout.addRow("First Point Value :", self.firstpointvalue)
-        self.page1Layout.addRow("First End Point Value :", self.firstendpointvalue)
-        self.page1.setLayout(self.page1Layout)
-        
-        #Create the Second Page
-        self.page2 = QWidget()
-        self.page2.setContentsMargins(0, 10, 0, 0)
-        self.page2Layout = QFormLayout()
-        self.page2Layout.setVerticalSpacing(40)
-        
-        self.firstpointvalue2 = QLineEdit()
-        self.firstendpointvalue2 = QLineEdit()
-        self.secondpointvalue2 = QLineEdit()
-        self.secondendpointvalue2 = QLineEdit()
-        
-        self.combolink2_1 = QComboBox()
-        self.combolink2_1.addItems(["1st", "2nd"])
-        
-        self.combolink2_2 = QComboBox()
-        self.combolink2_2.addItems(["1st", "2nd"])
-        self.combolink2_2.setCurrentIndex(1)
-        
-        self.page2Layout.addRow("First Point Value :", self.firstpointvalue2)
-        self.page2Layout.addRow("First End Point Value :", self.firstendpointvalue2)
-        self.page2Layout.addRow("Second Point Value :", self.secondpointvalue2)
-        self.page2Layout.addRow("Second End Point Value :", self.secondendpointvalue2)
-        self.page2Layout.addRow("1st Point Link :", self.combolink2_1)
-        self.page2Layout.addRow("2nd Point Link :", self.combolink2_2)
-        self.page2.setLayout(self.page2Layout)
-        
-        #Create the Third Page
-        self.page3 = QWidget()
-        self.page3.setContentsMargins(0, 10, 0, 0)
-        self.page3Layout = QFormLayout()
-        self.page3Layout.setVerticalSpacing(20)
-        
-        self.firstpointvalue3 = QLineEdit()
-        self.firstendpointvalue3 = QLineEdit()
-        self.secondpointvalue3 = QLineEdit()
-        self.secondendpointvalue3 = QLineEdit()
-        self.thirdpointvalue3 = QLineEdit()
-        self.thirdendpointvalue3 = QLineEdit()
-        
-        self.combolink3_1 = QComboBox()
-        self.combolink3_1.addItems(["1st", "2nd", "3rd"])
-        
-        self.combolink3_2 = QComboBox()
-        self.combolink3_2.addItems(["1st", "2nd", "3rd"])
-        self.combolink3_2.setCurrentIndex(1)
-        
-        self.combolink3_3 = QComboBox()
-        self.combolink3_3.addItems(["1st", "2nd", "3rd"])
-        self.combolink3_3.setCurrentIndex(2)
-        
-        self.page3Layout.addRow("First Point Value :", self.firstpointvalue3)
-        self.page3Layout.addRow("First End Point Value :", self.firstendpointvalue3)
-        self.page3Layout.addRow("Second Point Value :", self.secondpointvalue3)
-        self.page3Layout.addRow("Second End Point Value :", self.secondendpointvalue3)
-        self.page3Layout.addRow("Third Point Value :", self.thirdpointvalue3)
-        self.page3Layout.addRow("Third End Point Value :", self.thirdendpointvalue3)
-        self.page3Layout.addRow("1st Point Link :", self.combolink3_1)
-        self.page3Layout.addRow("2nd Point Link :", self.combolink3_2)
-        self.page3Layout.addRow("3rd Point Link :", self.combolink3_3)
-        self.page3.setLayout(self.page3Layout)
-        
-        #Create the Fourth Page
-        self.page4 = QWidget()
-        self.page4.setContentsMargins(0, 10, 0, 0)
-        self.page4Layout = QFormLayout()
-        self.page4Layout.setVerticalSpacing(18)
-        
-        self.firstpointvalue4 = QLineEdit()
-        self.firstendpointvalue4 = QLineEdit()
-        self.secondpointvalue4 = QLineEdit()
-        self.secondendpointvalue4 = QLineEdit()
-        self.thirdpointvalue4 = QLineEdit()
-        self.thirdendpointvalue4 = QLineEdit()
-        self.fourthpointvalue4 = QLineEdit()
-        self.fourthendpointvalue4 = QLineEdit()
-        
-        self.combolink4_1 = QComboBox()
-        self.combolink4_1.addItems(["1st", "2nd", "3rd", "4th"])
-        
-        self.combolink4_2 = QComboBox()
-        self.combolink4_2.addItems(["1st", "2nd", "3rd", "4th"])
-        self.combolink4_2.setCurrentIndex(1)
-        
-        self.combolink4_3 = QComboBox()
-        self.combolink4_3.addItems(["1st", "2nd", "3rd", "4th"])
-        self.combolink4_3.setCurrentIndex(2)
-        
-        self.combolink4_4 = QComboBox()
-        self.combolink4_4.addItems(["1st", "2nd", "3rd", "4th"])
-        self.combolink4_4.setCurrentIndex(3)
-        
-        self.page4Layout.addRow("First Point Value :", self.firstpointvalue4)
-        self.page4Layout.addRow("First End Point Value :", self.firstendpointvalue4)
-        self.page4Layout.addRow("Second Point Value :", self.secondpointvalue4)
-        self.page4Layout.addRow("Second End Point Value :", self.secondendpointvalue4)
-        self.page4Layout.addRow("Third Point Value :", self.thirdpointvalue4)
-        self.page4Layout.addRow("Third End Point Value :", self.thirdendpointvalue4)
-        self.page4Layout.addRow("Fourth Point Value :", self.fourthpointvalue4)
-        self.page4Layout.addRow("Fourth End Point Value :", self.fourthendpointvalue4)
-        self.page4Layout.addRow("1st Point Link :", self.combolink4_1)
-        self.page4Layout.addRow("2nd Point Link :", self.combolink4_2)
-        self.page4Layout.addRow("3rd Point Link :", self.combolink4_3)
-        self.page4Layout.addRow("4th Point Link :", self.combolink4_4)
-        self.page4.setLayout(self.page4Layout)
-        
         #Place the Page to Stacked Layout
-        self.stackedLayout.addWidget(self.page1)
-        self.stackedLayout.addWidget(self.page2)
-        self.stackedLayout.addWidget(self.page3)
-        self.stackedLayout.addWidget(self.page4)
+        self.stackedLayout.addWidget(self.Page1())
+        self.stackedLayout.addWidget(self.Page2())
+        self.stackedLayout.addWidget(self.Page3())
+        self.stackedLayout.addWidget(self.Page4())
         
         #Place the Stacked Layout
         self.sublayout_2.addLayout(self.stackedLayout)
@@ -255,10 +152,228 @@ class Window(QMainWindow):
         status.showMessage("Welcome to the Creating function image tool")
         self.setStatusBar(status)
         
+    def Page1(self):
+        #Create the First Page
+        page1 = QWidget()
+        page1.setContentsMargins(0, 10, 0, 0)
+        page1Layout = QFormLayout()
+        page1Layout.setVerticalSpacing(10)
+        firstpointvalue = QLineEdit()
+        firstendpointvalue = QLineEdit()
+        page1Layout.addRow("First Point Value :", firstpointvalue)
+        page1Layout.addRow("First End Point Value :", firstendpointvalue)
+        page1.setLayout(page1Layout)
+        
+        firstpointvalue.textChanged.connect(lambda: self.textChange(firstpointvalue.text(), 1))
+        firstendpointvalue.textChanged.connect(lambda: self.textEndChange(firstendpointvalue.text(), 1))
+        
+        return page1
+    
+    def Page2(self):
+        #Create the Second Page
+        page2 = QWidget()
+        page2.setContentsMargins(0, 10, 0, 0)
+        page2Layout = QFormLayout()
+        page2Layout.setVerticalSpacing(40)
+        
+        firstpointvalue = QLineEdit()
+        firstendpointvalue = QLineEdit()
+        secondpointvalue = QLineEdit()
+        secondendpointvalue = QLineEdit()
+        
+        combolink1 = QComboBox()
+        combolink1.addItems(["1st", "2nd"])
+        combolink1.setCurrentIndex(self.first_link-1)
+        
+        combolink2 = QComboBox()
+        combolink2.addItems(["1st", "2nd"])
+        combolink2.setCurrentIndex(self.second_link-1)
+        
+        page2Layout.addRow("First Point Value :", firstpointvalue)
+        page2Layout.addRow("First End Point Value :", firstendpointvalue)
+        page2Layout.addRow("Second Point Value :", secondpointvalue)
+        page2Layout.addRow("Second End Point Value :", secondendpointvalue)
+        page2Layout.addRow("1st Point Link :", combolink1)
+        page2Layout.addRow("2nd Point Link :", combolink2)
+        page2.setLayout(page2Layout)
+        
+        firstpointvalue.textChanged.connect(lambda: self.textChange(firstpointvalue.text(), 1))
+        firstendpointvalue.textChanged.connect(lambda: self.textEndChange(firstendpointvalue.text(), 1))
+        secondpointvalue.textChanged.connect(lambda: self.textChange(secondpointvalue.text(), 2))
+        secondendpointvalue.textChanged.connect(lambda: self.textEndChange(secondendpointvalue.text(), 2))
+        
+        combolink1.currentIndexChanged.connect(lambda: self.selectionChange(combolink1, 1))
+        combolink2.currentIndexChanged.connect(lambda: self.selectionChange(combolink2, 2))
+        
+        self.number_2.toggled.connect(lambda: self.checkChange([1,2], combolink1,combolink2))
+        
+        return page2
+    
+    def Page3(self):
+        #Create the Third Page
+        page3 = QWidget()
+        page3.setContentsMargins(0, 10, 0, 0)
+        page3Layout = QFormLayout()
+        page3Layout.setVerticalSpacing(20)
+        
+        firstpointvalue = QLineEdit()
+        firstendpointvalue = QLineEdit()
+        secondpointvalue = QLineEdit()
+        secondendpointvalue = QLineEdit()
+        thirdpointvalue = QLineEdit()
+        thirdendpointvalue = QLineEdit()
+        
+        combolink1 = QComboBox()
+        combolink1.addItems(["1st", "2nd", "3rd"])
+        combolink1.setCurrentIndex(self.first_link-1)
+        
+        combolink2 = QComboBox()
+        combolink2.addItems(["1st", "2nd", "3rd"])
+        combolink2.setCurrentIndex(self.second_link-1)
+        
+        combolink3 = QComboBox()
+        combolink3.addItems(["1st", "2nd", "3rd"])
+        combolink3.setCurrentIndex(self.third_link-1)
+        
+        page3Layout.addRow("First Point Value :", firstpointvalue)
+        page3Layout.addRow("First End Point Value :", firstendpointvalue)
+        page3Layout.addRow("Second Point Value :", secondpointvalue)
+        page3Layout.addRow("Second End Point Value :", secondendpointvalue)
+        page3Layout.addRow("Third Point Value :", thirdpointvalue)
+        page3Layout.addRow("Third End Point Value :", thirdendpointvalue)
+        page3Layout.addRow("1st Point Link :", combolink1)
+        page3Layout.addRow("2nd Point Link :", combolink2)
+        page3Layout.addRow("3rd Point Link :", combolink3)
+        page3.setLayout(page3Layout)
+        
+        firstpointvalue.textChanged.connect(lambda: self.textChange(firstpointvalue.text(), 1))
+        firstendpointvalue.textChanged.connect(lambda: self.textEndChange(firstendpointvalue.text(), 1))
+        secondpointvalue.textChanged.connect(lambda: self.textChange(secondpointvalue.text(), 2))
+        secondendpointvalue.textChanged.connect(lambda: self.textEndChange(secondendpointvalue.text(), 2))
+        thirdpointvalue.textChanged.connect(lambda: self.textChange(thirdpointvalue.text(), 3))
+        thirdendpointvalue.textChanged.connect(lambda: self.textEndChange(thirdendpointvalue.text(), 3))
+        
+        combolink1.currentIndexChanged.connect(lambda: self.selectionChange(combolink1, 1))
+        combolink2.currentIndexChanged.connect(lambda: self.selectionChange(combolink2, 2))
+        combolink3.currentIndexChanged.connect(lambda: self.selectionChange(combolink3, 3))
+        
+        self.number_3.toggled.connect(lambda: self.checkChange([1,2,3], combolink1,combolink2,combolink3))
+        
+        return page3
+    
+    def Page4(self):
+        #Create the Fourth Page
+        page4 = QWidget()
+        page4.setContentsMargins(0, 10, 0, 0)
+        page4Layout = QFormLayout()
+        page4Layout.setVerticalSpacing(18)
+        
+        firstpointvalue = QLineEdit()
+        firstendpointvalue = QLineEdit()
+        secondpointvalue = QLineEdit()
+        secondendpointvalue = QLineEdit()
+        thirdpointvalue = QLineEdit()
+        thirdendpointvalue = QLineEdit()
+        fourthpointvalue = QLineEdit()
+        fourthendpointvalue = QLineEdit()
+        
+        combolink1 = QComboBox()
+        combolink1.addItems(["1st", "2nd", "3rd", "4th"])
+        combolink1.setCurrentIndex(self.first_link-1)
+        
+        combolink2 = QComboBox()
+        combolink2.addItems(["1st", "2nd", "3rd", "4th"])
+        combolink2.setCurrentIndex(self.second_link-1)
+        
+        combolink3 = QComboBox()
+        combolink3.addItems(["1st", "2nd", "3rd", "4th"])
+        combolink3.setCurrentIndex(self.third_link-1)
+        
+        combolink4 = QComboBox()
+        combolink4.addItems(["1st", "2nd", "3rd", "4th"])
+        combolink4.setCurrentIndex(self.fourth_link-1)
+        
+        page4Layout.addRow("First Point Value :", firstpointvalue)
+        page4Layout.addRow("First End Point Value :", firstendpointvalue)
+        page4Layout.addRow("Second Point Value :", secondpointvalue)
+        page4Layout.addRow("Second End Point Value :", secondendpointvalue)
+        page4Layout.addRow("Third Point Value :", thirdpointvalue)
+        page4Layout.addRow("Third End Point Value :", thirdendpointvalue)
+        page4Layout.addRow("Fourth Point Value :", fourthpointvalue)
+        page4Layout.addRow("Fourth End Point Value :", fourthendpointvalue)
+        page4Layout.addRow("1st Point Link :", combolink1)
+        page4Layout.addRow("2nd Point Link :", combolink2)
+        page4Layout.addRow("3rd Point Link :", combolink3)
+        page4Layout.addRow("4th Point Link :", combolink4)
+        page4.setLayout(page4Layout)
+        
+        firstpointvalue.textChanged.connect(lambda: self.textChange(firstpointvalue.text(), 1))
+        firstendpointvalue.textChanged.connect(lambda: self.textEndChange(firstendpointvalue.text(), 1))
+        secondpointvalue.textChanged.connect(lambda: self.textChange(secondpointvalue.text(), 2))
+        secondendpointvalue.textChanged.connect(lambda: self.textEndChange(secondendpointvalue.text(), 2))
+        thirdpointvalue.textChanged.connect(lambda: self.textChange(thirdpointvalue.text(), 3))
+        thirdendpointvalue.textChanged.connect(lambda: self.textEndChange(thirdendpointvalue.text(), 3))
+        fourthpointvalue.textChanged.connect(lambda: self.textChange(fourthpointvalue.text(), 4))
+        fourthendpointvalue.textChanged.connect(lambda: self.textEndChange(fourthendpointvalue.text(), 4))
+        
+        combolink1.currentIndexChanged.connect(lambda: self.selectionChange(combolink1, 1))
+        combolink2.currentIndexChanged.connect(lambda: self.selectionChange(combolink2, 2))
+        combolink3.currentIndexChanged.connect(lambda: self.selectionChange(combolink3, 3))
+        combolink4.currentIndexChanged.connect(lambda: self.selectionChange(combolink4, 4))
+        
+        self.number_4.toggled.connect(lambda: self.checkChange([1,2,3,4], combolink1,combolink2,combolink3,combolink4))
+        
+        return page4
+        
+        
     def switchPage(self, b):
         b = int(b.text())
+        
+        # Set the point number
         self.number_point = b
+        
         self.stackedLayout.setCurrentIndex(b-1)
+        
+    def selectionChange(self, combobox: QComboBox, num: int):
+        if num == 1 :
+            self.first_link = combobox.currentIndex()+1
+        if num == 2 :
+            self.second_link = combobox.currentIndex()+1
+        if num == 3 :
+            self.third_link = combobox.currentIndex()+1
+        if num == 4 : 
+            self.fourth_link = combobox.currentIndex()+1
+            
+    def checkChange(self, num: list, *combobox: QComboBox):
+        for i in num :
+            if i == 1:
+                combobox[i-1].setCurrentIndex(self.first_link-1)
+            if i == 2:
+                combobox[i-1].setCurrentIndex(self.second_link-1)
+            if i == 3:
+                combobox[i-1].setCurrentIndex(self.third_link-1)
+            if i == 4:
+                combobox[i-1].setCurrentIndex(self.fourth_link-1)
+            
+    def textChange(self, text: str, num: int):
+        if num == 1:
+            self.firstpointvalue = text
+        if num == 2:
+            self.secondpointvalue = text
+        if num == 3:
+            self.thirdpointvalue = text
+        if num == 4:
+            self.fourthpointvalue = text
+        
+    def textEndChange(self, text: str, num: int):
+        if num == 1 :
+            self.firstendpointvalue = text
+        if num == 2 :
+            self.secondendpointvalue = text
+        if num == 3 :
+            self.thirdendpointvalue = text
+        if num == 4 :
+            self.fourthendpointvalue = text
         
     def setFunctionType(self):
         if self.type_radiobutton_1.isChecked() :
@@ -272,21 +387,21 @@ class Window(QMainWindow):
     def CreateImage(self):
         # Initialize the value
         if self.number_point == 1:
-            self.point_domain = [self.firstpointvalue.text()]
-            self.point_range = [self.firstendpointvalue.text()]
+            self.point_domain = [self.firstpointvalue]
+            self.point_range = [self.firstendpointvalue]
             self.link_order = [1]
         elif self.number_point == 2 :
-            self.point_domain = [self.firstpointvalue2.text(), self.secondpointvalue2.text()]
-            self.point_range = [self.firstendpointvalue2.text(), self.secondendpointvalue2.text()]
-            self.link_order = [self.combolink2_1.currentIndex()+1, self.combolink2_2.currentIndex()+1]
+            self.point_domain = [self.firstpointvalue, self.secondpointvalue]
+            self.point_range = [self.firstendpointvalue, self.secondendpointvalue]
+            self.link_order = [self.first_link, self.second_link]
         elif self.number_point == 3:
-            self.point_domain = [self.firstpointvalue3.text(), self.secondpointvalue3.text(), self.thirdpointvalue3.text()]
-            self.point_range = [self.firstendpointvalue3.text(), self.secondendpointvalue3.text(), self.thirdendpointvalue3.text()]
-            self.link_order = [self.combolink3_1.currentIndex()+1, self.combolink3_2.currentIndex()+1, self.combolink3_3.currentIndex()+1]
+            self.point_domain = [self.firstpointvalue, self.secondpointvalue, self.thirdpointvalue]
+            self.point_range = [self.firstendpointvalue, self.secondendpointvalue, self.thirdendpointvalue]
+            self.link_order = [self.first_link, self.second_link, self.third_link]
         elif self.number_point == 4 :
-            self.point_domain = [self.firstpointvalue4.text(), self.secondpointvalue4.text(), self.thirdpointvalue4.text(), self.fourthpointvalue4.text()]
-            self.point_range = [self.firstendpointvalue4.text(), self.secondendpointvalue4.text(), self.thirdendpointvalue4.text(), self.fourthendpointvalue4.text()]
-            self.link_order = [self.combolink4_1.currentIndex()+1, self.combolink4_2.currentIndex()+1, self.combolink4_3.currentIndex()+1, self.combolink4_4.currentIndex()+1]
+            self.point_domain = [self.firstpointvalue, self.secondpointvalue, self.thirdpointvalue, self.fourthpointvalue]
+            self.point_range = [self.firstendpointvalue, self.secondendpointvalue, self.thirdendpointvalue, self.fourthendpointvalue]
+            self.link_order = [self.first_link, self.second_link, self.third_link, self.fourth_link]
         
         
         #Create the Image

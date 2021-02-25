@@ -41,14 +41,19 @@ class Picture:
             draw.ellipse((left_first_start_x, left_first_start_y+(CONST*x), left_first_end_x, left_first_end_y+(CONST*x)), fill=(0, 0, 0))
             draw.ellipse((right_first_start_x, right_first_start_y+(CONST*x), right_first_end_x, right_first_end_y+(CONST*x)), fill=(0, 0, 0))
         
+        i = 1
+        
         #Draw the line
         for x in link_order:
             
             # link_order in [[1,2],[3,4]] form
             # x in [1,2] form
-            first, last = x
             
-            self.DrawPointLine(num, first, last)
+            for y in x :
+                self.DrawPointLine(num, i, y)
+            
+            i += 1
+
         
         
     def DrawFunction(self, function_type: int, function_name: str, number_point: int, point_domain: list, point_range: list, link_order: list):
