@@ -211,5 +211,215 @@
                 "position-y": 3.9
             }
         }
+    },
+    "point": {
+        "1": {
+            "1": {
+                "1": {
+                    "angle": 0,
+                    "image-size": 0.73,
+                    "position-x": 125,
+                    "position-y": 190
+                }
+            }
+        },
+        "2": {
+            "1": {
+                "1": {
+                    "angle": 0,
+                    "image-size": 0.73,
+                    "position-x": 125,
+                    "position-y": 190
+                },
+                "2": {
+                    "angle": -26,
+                    "image-size": 0.82,
+                    "position-x": 120,
+                    "position-y": 190
+                }
+            },
+            "2": {
+                "1": {
+                    "angle": 25,
+                    "image-size": 0.8,
+                    "position-x": 125,
+                    "position-y": 190
+                },
+                "2": {
+                    "angle": 0,
+                    "image-size": 0.73,
+                    "position-x": 125,
+                    "position-y": 345
+                }
+            }
+        },
+        "3": {
+            "1": {
+                "1": {
+                    "angle": 0,
+                    "image-size": 0.73,
+                    "position-x": 125,
+                    "position-y": 190
+                },
+                "2": {
+                    "angle": -17.5,
+                    "image-size": 0.76,
+                    "position-x": 125,
+                    "position-y": 190
+                },
+                "3": {
+                    "angle": -37,
+                    "image-size": 0.9,
+                    "position-x": 121,
+                    "position-y": 194
+                }
+            },
+            "2": {
+                "1": {
+                    "angle": 17,
+                    "image-size": 0.75,
+                    "position-x": 125,
+                    "position-y": 192
+                },
+                "2": {
+                    "angle": 0,
+                    "image-size": 0.73,
+                    "position-x": 125,
+                    "position-y": 300
+                },
+                "3": {
+                    "angle": -17.7,
+                    "image-size": 0.76,
+                    "position-x": 125,
+                    "position-y": 300
+                }
+            },
+            "3": {
+                "1": {
+                    "angle": 37,
+                    "image-size": 0.9,
+                    "position-x": 120,
+                    "position-y": 193
+                },
+                "2": {
+                    "angle": 17,
+                    "image-size": 0.75,
+                    "position-x": 125,
+                    "position-y": 302
+                },
+                "3": {
+                    "angle": 0,
+                    "image-size": 0.73,
+                    "position-x": 125,
+                    "position-y": 410
+                }
+            }
+        },
+        "4": {
+            "1": {
+                "1": {
+                    "angle": 0,
+                    "image-size": 0.73,
+                    "position-x": 125,
+                    "position-y": 190
+                },
+                "2": {
+                    "angle": -10,
+                    "image-size": 0.73,
+                    "position-x": 125,
+                    "position-y": 190
+                },
+                "3": {
+                    "angle": -21,
+                    "image-size": 0.77,
+                    "position-x": 125,
+                    "position-y": 190
+                },
+                "4": {
+                    "angle": -32.5,
+                    "image-size": 0.85,
+                    "position-x": 122,
+                    "position-y": 192
+                }
+            },
+            "2": {
+                "1": {
+                    "angle": 10,
+                    "image-size": 0.73,
+                    "position-x": 125,
+                    "position-y": 190
+                },
+                "2": {
+                    "angle": 0,
+                    "image-size": 0.73,
+                    "position-x": 125,
+                    "position-y": 255
+                },
+                "3": {
+                    "angle": -10,
+                    "image-size": 0.73,
+                    "position-x": 125,
+                    "position-y": 255
+                },
+                "4": {
+                    "angle": -21,
+                    "image-size": 0.77,
+                    "position-x": 125,
+                    "position-y": 255
+                }
+            },
+            "3": {
+                "1": {
+                    "angle": 21,
+                    "image-size": 0.73,
+                    "position-x": 125,
+                    "position-y": 189
+                },
+                "2": {
+                    "angle": 10,
+                    "image-size": 0.73,
+                    "position-x": 125,
+                    "position-y": 255
+                },
+                "3": {
+                    "angle": 0,
+                    "image-size": 0.73,
+                    "position-x": 125,
+                    "position-y": 320
+                },
+                "4": {
+                    "angle": -10,
+                    "image-size": 0.73,
+                    "position-x": 125,
+                    "position-y": 320
+                }
+            },
+            "4": {
+                "1": {
+                    "angle": 32,
+                    "image-size": 0.85,
+                    "position-x": 121,
+                    "position-y": 192
+                },
+                "2": {
+                    "angle": 21,
+                    "image-size": 0.77,
+                    "position-x": 125,
+                    "position-y": 254
+                },
+                "3": {
+                    "angle": 10,
+                    "image-size": 0.73,
+                    "position-x": 125,
+                    "position-y": 320
+                },
+                "4": {
+                    "angle": 0,
+                    "image-size": 0.73,
+                    "position-x": 125,
+                    "position-y": 385
+                }
+            }
+        }
     }
 }
