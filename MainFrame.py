@@ -13,6 +13,7 @@ class Window(QMainWindow):
         super().__init__()
         
         self.number_point = 1
+        self.function_mode = 0
         self.function_type = 0
         self.firstpointvalue = ""
         self.secondpointvalue = "" 
@@ -47,6 +48,22 @@ class Window(QMainWindow):
         self.basic_groupbox.setContentsMargins(40, 0, 0, 0)
         self.basic_groupbox.setLayout(self.sublayout_1)
         
+        #Set the The Before First Part of Inner Layout
+        self.leftlayout_0 = QHBoxLayout()
+        
+        self.mode_group_box = QGroupBox("Function Mode :")
+        self.mode_group_box.setFixedHeight(60)
+        self.mode_group_box.setContentsMargins(100, 0, 0, 0)
+        self.mode_group_box.setLayout(self.leftlayout_0)
+        
+        self.mode_radiobutton_1 = QRadioButton("Line")
+        self.mode_radiobutton_1.setChecked(True)
+        self.mode_radiobutton_2 = QRadioButton("Circle")
+        
+        #Place the Radiobutton
+        self.leftlayout_0.addWidget(self.mode_radiobutton_1)
+        self.leftlayout_0.addWidget(self.mode_radiobutton_2)
+
         #Set the The First Part of Inner Layout
         self.leftlayout_1 = QHBoxLayout()
         
@@ -100,6 +117,7 @@ class Window(QMainWindow):
         self.leftlayout_3.addWidget(self.number_4)
         
         #Place all the Inner Layout for First Part of Outer Layout
+        self.sublayout_1.addWidget(self.mode_group_box)
         self.sublayout_1.addWidget(self.function_type_group_box)
         self.sublayout_1.addWidget(self.function_info_group_box)
         self.sublayout_1.addWidget(self.point_number)
@@ -136,16 +154,19 @@ class Window(QMainWindow):
         self._centralWidget.setLayout(self.layout)
         
         #Connect all Function
-        self.number_1.clicked.connect(lambda: self.switchPage(self.number_1))
-        self.number_2.clicked.connect(lambda: self.switchPage(self.number_2))
-        self.number_3.clicked.connect(lambda: self.switchPage(self.number_3))
-        self.number_4.clicked.connect(lambda: self.switchPage(self.number_4))
+        self.number_1.clicked.connect(lambda: self.switchPage(self.number_1, self.stackedLayout))
+        self.number_2.clicked.connect(lambda: self.switchPage(self.number_2, self.stackedLayout))
+        self.number_3.clicked.connect(lambda: self.switchPage(self.number_3, self.stackedLayout))
+        self.number_4.clicked.connect(lambda: self.switchPage(self.number_4, self.stackedLayout))
         
         self.preview_button.clicked.connect(self.CreateImage)
         
         self.type_radiobutton_1.clicked.connect(self.setFunctionType)
         self.type_radiobutton_2.clicked.connect(self.setFunctionType)
         self.type_radiobutton_3.clicked.connect(self.setFunctionType)
+
+        self.mode_radiobutton_1.clicked.connect(self.setFunctionMode)
+        self.mode_radiobutton_2.clicked.connect(self.setFunctionMode)
         
         #Set the Status Bar
         status = QStatusBar()
@@ -325,14 +346,14 @@ class Window(QMainWindow):
         
         return page4
         
+    def switchPage(self, button: QRadioButton, stackedLayout: QStackedLayout):
+        if button.isChecked():
+            num = int(button.text())
         
-    def switchPage(self, b):
-        b = int(b.text())
+            # Set the point number
+            self.number_point = num
         
-        # Set the point number
-        self.number_point = b
-        
-        self.stackedLayout.setCurrentIndex(b-1)
+            stackedLayout.setCurrentIndex(num-1)
         
     def selectionChange(self, combobox: QComboBox, num: int):
         if num == 1 :
@@ -383,6 +404,18 @@ class Window(QMainWindow):
         elif self.type_radiobutton_3.isChecked() :
             self.function_type = 2
         pass
+
+    def setFunctionMode(self):
+        if self.mode_radiobutton_1.isChecked() :
+            self.function_mode = 0
+            self.number_1.show()
+            self.number_1.setChecked(True)
+        elif self.mode_radiobutton_2.isChecked() :
+            self.function_mode = 1
+            self.number_1.hide()
+            self.number_2.setChecked(True)
+        pass
+    
     
     def CreateImage(self):
         # Initialize the value
@@ -406,8 +439,11 @@ class Window(QMainWindow):
         
         #Create the Image
         img = Picture()
-        img.DrawFunction(self.function_type, self.function_name.text(), self.number_point, self.point_domain, self.point_range, self.link_order)
-                
+        if self.function_mode == 0:
+            img.DrawFunction(self.function_type, self.function_name.text(), self.number_point, self.point_domain, self.point_range, self.link_order)
+        if self.function_mode == 1:
+            img.DrawPoint(self.function_type, self.function_name.text(), self.number_point, self.point_domain, self.point_range, [self.link_order])
+
         # Create the Preview Frame
         Frame = Preview_Window(img.img)
         Frame.show()
