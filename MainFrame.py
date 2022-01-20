@@ -59,6 +59,7 @@ class Window(QMainWindow):
         self.mode_radiobutton_1 = QRadioButton("Line")
         self.mode_radiobutton_1.setChecked(True)
         self.mode_radiobutton_2 = QRadioButton("Circle")
+
         
         #Place the Radiobutton
         self.leftlayout_0.addWidget(self.mode_radiobutton_1)
@@ -172,7 +173,7 @@ class Window(QMainWindow):
         status = QStatusBar()
         status.showMessage("Welcome to the Creating function image tool")
         self.setStatusBar(status)
-        
+
     def Page1(self):
         #Create the First Page
         page1 = QWidget()
@@ -416,7 +417,9 @@ class Window(QMainWindow):
             self.number_2.click()
         pass
     
-    
+    def ListSetNumber(self,sequence, start=0):
+        return [[sequence[i]] for i in range(len(sequence))]
+
     def CreateImage(self):
         # Initialize the value
         if self.number_point == 1:
@@ -442,7 +445,7 @@ class Window(QMainWindow):
         if self.function_mode == 0:
             img.DrawFunction(self.function_type, self.function_name.text(), self.number_point, self.point_domain, self.point_range, self.link_order)
         if self.function_mode == 1:
-            img.DrawPoint(self.function_type, self.function_name.text(), self.number_point, self.point_domain, self.point_range, [self.link_order])
+            img.DrawPoint(self.function_type, self.function_name.text(), self.number_point, self.point_domain, self.point_range, self.ListSetNumber(self.link_order))
 
         # Create the Preview Frame
         Frame = Preview_Window(img.img)
