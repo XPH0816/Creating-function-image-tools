@@ -409,11 +409,11 @@ class Window(QMainWindow):
         if self.mode_radiobutton_1.isChecked() :
             self.function_mode = 0
             self.number_1.show()
-            self.number_1.setChecked(True)
+            self.number_1.click()
         elif self.mode_radiobutton_2.isChecked() :
             self.function_mode = 1
             self.number_1.hide()
-            self.number_2.setChecked(True)
+            self.number_2.click()
         pass
     
     
