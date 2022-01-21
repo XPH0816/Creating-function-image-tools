@@ -10,9 +10,9 @@ This Project contains the functions below :
 
 | Functions | Description  | Package Used |
 | ------------- | ------------- | ------------- |
-| MainFrame | GUI Frame for configuration  | PyQt5 |
+| MainFrame | Main GUI Frame for Image configuration  | PyQt5 |
 | PreviewFrame | GUI Frame for Preview the Picture  | PyQt5 |
-| main | Contain All the backend function for creating the image | Pillow |
+| main | Contain All and Provide the backend function for creating the image | Pillow |
 
 ## Project Idea
 This project is inspired by my mom
