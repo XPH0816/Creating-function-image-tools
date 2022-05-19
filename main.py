@@ -178,6 +178,7 @@ class Picture:
         # First Domain Value Position
         domain_x = left_x1 - 40
         domain_y = (left_y1+left_y2)/(number_point+2)
+        self.domain_y = domain_y
         
         # First Range Value Position
         range_x = right_x1+20
