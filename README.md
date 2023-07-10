@@ -8,11 +8,11 @@ This Project contains the functions below :
 
 ### Project Content
 
-| Functions | Description  | Package Used |
-| ------------- | ------------- | ------------- |
-| MainFrame | Main GUI Frame for Image configuration  | PyQt5 |
-| PreviewFrame | GUI Frame for Preview the Picture  | PyQt5 |
-| main | Contain All and Provide the backend function for creating the image | Pillow |
+|   Functions  |                            Description                              | Package Used |
+| ------------ | ------------------------------------------------------------------- | ------------ |
+|   MainFrame  |                Main GUI Frame for Image configuration               |    PyQt5     |
+| PreviewFrame |                  GUI Frame for Preview the Picture                  |    PyQt5     |
+|     main     | Contain All and Provide the backend function for creating the image |    Pillow    |
 
 ## Project Idea
 This project is inspired by my mom
@@ -22,4 +22,4 @@ This project is inspired by my mom
 For Windows, for simplicity, a prebuilt archive with all the dependencies
  - [`Creating-function-image-tools.rar`][direct-win64]
  
- [direct-win64]:https://github.com/XPH0904/Creating-function-image-tools/releases/download/v1.1/Creating-function-image-tools.rar
+ [direct-win64]:https://github.com/XPH0816/Creating-function-image-tools/releases/download/v1.1/Creating-function-image-tools.rar
